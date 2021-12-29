@@ -5,8 +5,6 @@ import './App.css';
 import UserForm from "./components/UserForm";
 import styled from 'styled-components';
 import Chart from './components/Charts';
-import PieChart from './components/PieChart';
-
 
 class App extends Component {
 
@@ -29,14 +27,12 @@ class App extends Component {
     var users = `https://api.github.com/users/${user}`;
     await axios.get(users)
       .then((res) => {
-
         const name = res.data.name;
         const id = res.data.id;
         const avatar = res.data.avatar_url;
         const followers = res.data.followers;
         const following = res.data.following;
         this.setState({ name, id, avatar, followers, following });
-
       })
 
       this.getChartData();
@@ -73,7 +69,7 @@ class App extends Component {
         <p>{this.state.name} | {this.state.id}</p>
         
         <div className='chart'>
-        <Popup scrolling="yes" trigger={<button className="button"> Followers</button>} modal closeOnDocumentClick>
+        <Popup scrolling="yes" trigger={<button className="button"> Followers vs Following </button>} modal closeOnDocumentClick>
           <div>
 
           <div><Chart chartData={this.state.chartData}/></div>

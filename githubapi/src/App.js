@@ -68,6 +68,7 @@ class App extends Component {
   renderInfo() {
     return (
       <div className='renders'>
+        <a href="/">New Search</a>
         <p> <UserIcon src={this.state.avatar} alt="this.name" /></p>
         <name> {this.state.name} </name>
         <p> {'Location: ' + this.state.location} </p>

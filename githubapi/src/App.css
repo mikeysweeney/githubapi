@@ -1,11 +1,8 @@
  .App {
+  margin-top: 10px;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-}
-
-.App #repos{
-  text-align: left;
 }
 
 .App UserIcon{
@@ -23,6 +20,21 @@
 .App-link {
   color: #050505;
 }
+button:hover {
+  cursor: pointer;
+  background: rgb(80, 75, 75);
+}
+
+button {
+  background: black;
+  color: white;
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  outline: none;
+  border-color: black;
+  
+}
 
 body{
   background-image: url('background.png');
@@ -35,9 +47,5 @@ body{
 }
 
 element.style {
-  text-align: center;
-}
-
-#repos{
   text-align: center;
 }

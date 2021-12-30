@@ -5,7 +5,7 @@ const UserForm = (props) => {
     return(
     <form onSubmit={props.retrieveInfo}>
         <input 
-        style= {{margin:"30px"}} 
+        style= {{margin:"10px"}} 
         placeholder='Github Username'
         type="text" 
         name="username"

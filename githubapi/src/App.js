@@ -68,7 +68,7 @@ class App extends Component {
   renderInfo() {
     return (
       <div className='renders'>
-        <a href="/">New Search</a>
+        <a href="s">Refresh</a>
         <p> <UserIcon src={this.state.avatar} alt="this.name" /></p>
         <name> {this.state.name} </name>
         <p> {'Location: ' + this.state.location} </p>
@@ -77,7 +77,6 @@ class App extends Component {
         <div className='chart'>
         <Popup scrolling="yes" trigger={<button className="button"> Followers vs Following </button>} modal closeOnDocumentClick>
           <div>
-
           <div><Chart chartData={this.state.chartData}/></div>
           </div>
         </Popup>
@@ -100,7 +99,7 @@ class App extends Component {
         {this.state.name ?
           this.renderInfo()
           :
-          <p id="loading-statement">Insert Github Username above</p>}
+          <p id="loading-statement">Awaiting data...</p>}
       </div>
 
     );
@@ -110,7 +109,7 @@ class App extends Component {
 export default App;
 
 const UserIcon = styled('img')`
-    position: 300px 500px;
-    width: 500px;
-    height: 500px;
+    position: 100px 200px;
+    width: 300px;
+    height: 300px;
     `

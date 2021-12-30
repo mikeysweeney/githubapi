@@ -1,8 +1,7 @@
  .App {
   text-align: center;
   font-size: 55px;
-  font-weight: bold;
-
+  font-weight: bolder;
 }
 
 .App #repos{
@@ -10,7 +9,7 @@
 }
 
 .App UserIcon{
-  position: absolute;
+  position: relative;
   left: 1000px;
   top: 20;
 }
@@ -29,13 +28,11 @@ body{
   background-image: url('background.png');
   background-size: 1550px 800px;
   background-repeat: repeat;
-
 }
 
 #bold{
   font-size: 60px;
 }
-
 
 element.style {
   text-align: center;

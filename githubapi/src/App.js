@@ -13,8 +13,10 @@ class App extends Component {
     id: null,
     avatar: null,
     followers: null,
-    chartData: [],
-    pieChartData:[]
+    company: null,
+    location: null,
+    numberofrepos: null,
+    chartData: []
   }
   // variable users which are the urls
   // retrieve the data from the github api 
@@ -32,12 +34,13 @@ class App extends Component {
         const avatar = res.data.avatar_url;
         const followers = res.data.followers;
         const following = res.data.following;
-        this.setState({ name, id, avatar, followers, following });
+        const company = res.data.company;
+        const location = res.data.location;
+        const numberofrepos = res.data.public_repos;
+        this.setState({ name, id, avatar, followers, following, company, location, numberofrepos });
       })
 
       this.getChartData();
-      this.getPieChartData();
-
   }
   
   // chart data
@@ -66,8 +69,10 @@ class App extends Component {
     return (
       <div className='renders'>
         <p> <UserIcon src={this.state.avatar} alt="this.name" /></p>
-        <p>{this.state.name} | {this.state.id}</p>
-        
+        <name> {this.state.name} </name>
+        <p> {'Location: ' + this.state.location} </p>
+        <p> {'Number of Repositories: '+ this.state.numberofrepos} </p>
+        <p> {'Github ID: '+this.state.id} </p>
         <div className='chart'>
         <Popup scrolling="yes" trigger={<button className="button"> Followers vs Following </button>} modal closeOnDocumentClick>
           <div>
@@ -104,7 +109,7 @@ class App extends Component {
 export default App;
 
 const UserIcon = styled('img')`
-    position: 30px 500px;
-    width: 200px;
-    height: 200px;
+    position: 300px 500px;
+    width: 500px;
+    height: 500px;
     `

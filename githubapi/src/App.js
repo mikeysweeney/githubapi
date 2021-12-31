@@ -6,6 +6,7 @@ import UserForm from "./components/UserForm";
 import styled from 'styled-components';
 import Chart from './components/Charts';
 import Chart2 from './components/Charts2';
+import logo from './components/loading.gif';
 
 class App extends Component {
 
@@ -54,6 +55,7 @@ class App extends Component {
   }
   listOfLanguages(){
     const arr = [];
+    // eslint-disable-next-line no-lone-blocks
     {this.state.languages.map(language => (arr.push(language.language)))};
     var langsUnique = ([...new Set(arr)]);
 
@@ -61,10 +63,12 @@ class App extends Component {
   }
   renderLanguages(){
     const arr = [];
+    // eslint-disable-next-line no-lone-blocks
     {this.state.languages.map(language => (arr.push(language.language)))};
     var langsUnique = ([...new Set(arr)]);
     var arrayLength = langsUnique.length;
     const size=[];
+    // eslint-disable-next-line no-lone-blocks
     {this.state.languages.map(language => (size.push(language.size)))};
     const subA = size.slice(0,arrayLength);
     return(subA)
@@ -146,7 +150,9 @@ class App extends Component {
         {this.state.name ?
           this.renderInfo()
           :
-          <p id="loading-statement">Awaiting data...</p>}
+          <img src={logo} alt="loading..." />
+          }
+
       </div>
     );
   }
@@ -155,7 +161,8 @@ export default App;
 
 
 const UserIcon = styled('img')`
-    position: 100px 200px;
-    width: 300px;
-    height: 300px;
+    position: 0px 0px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
     `

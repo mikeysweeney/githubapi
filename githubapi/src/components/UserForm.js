@@ -10,7 +10,6 @@ const UserForm = (props) => {
         type="text" 
         name="username"
         //autoComplete='off'
-        color='blue'
         />
         <button id="Search"> Search </button>
     </form>

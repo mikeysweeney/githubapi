@@ -6,7 +6,7 @@ import UserForm from "./components/UserForm";
 import styled from 'styled-components';
 import Chart from './components/Charts';
 import Chart2 from './components/Charts2';
-import logo from './components/loading.gif';
+import logo from './components/giphy.gif';
 
 class App extends Component {
 
@@ -161,8 +161,8 @@ export default App;
 
 
 const UserIcon = styled('img')`
-    position: 0px 0px;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
+    position: -200px 0px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
     `

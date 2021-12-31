@@ -4,8 +4,14 @@ import React from 'react';
 const UserForm = (props) => {
     return(
     <form onSubmit={props.retrieveInfo}>
-        <input style= {{margin:"30px" }} type="text" name="username"/>
-        <button id="Search"> Search Username </button>
+        <input 
+        style= {{margin:"10px"}} 
+        placeholder='Github Username'
+        type="text" 
+        name="username"
+        //autoComplete='off'
+        />
+        <button id="Search"> Search </button>
     </form>
     );
 }

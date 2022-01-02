@@ -1,7 +1,7 @@
 import React from 'react';
 
 // button style and details
-const UserForm = (props) => {
+const UserInput = (props) => {
     return(
     <form onSubmit={props.retrieveInfo}>
         <input 
@@ -9,12 +9,12 @@ const UserForm = (props) => {
         placeholder='Github Username'
         type="text" 
         name="username"
-        //autoComplete='off'
+        autoComplete='off'
         />
         <button id="Search"> Search </button>
     </form>
     );
 }
 
-export default UserForm;
+export default UserInput;
 

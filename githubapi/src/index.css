@@ -6,30 +6,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 h1 {
 	font-size: 300%;	
 }
-a{
-  margin-top: 0px;
-  margin-left: 0px;
-  font-size: 100%
-}
+
 name {
-  margin-top: 0px;
-  margin-left: 0px;
   font-size: 200%;
   font-weight: bolder;
+}
+
+repolist{
+  text-align: center;
+  font-size: 200%;	
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/*
-footer p {
-	text-align: right;
-	padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left:15px;
-  padding-right:15px
-}*/
+

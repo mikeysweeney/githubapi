@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import Popup from "reactjs-popup";
 import './App.css';
-import UserForm from "./components/UserForm";
+import UserInput from "./components/UserInput";
 import styled from 'styled-components';
 import Chart from './components/Charts';
 import Chart2 from './components/Charts2';
@@ -18,6 +18,7 @@ class App extends Component {
     company: null,
     location: null,
     numberofrepos: null,
+    link: null,
     chartData: [],
     chartData2:[],
     chartData3:[],
@@ -42,9 +43,10 @@ class App extends Component {
         const company = res.data.company;
         const location = res.data.location;
         const numberofrepos = res.data.public_repos;
-        this.setState({ name, id, avatar, followers, following, company, location, numberofrepos });
+        const link = res.data.html_url;
+        this.setState({ name, id, avatar, followers, following, company, location, numberofrepos, link });
       })
-      await axios.get(repos)
+    await axios.get(repos)
       .then((res) => {
         const repos = res.data;
         const languages = res.data;
@@ -53,14 +55,16 @@ class App extends Component {
       this.getChartData();
       this.getChartData2();
   }
+
   listOfLanguages(){
     const arr = [];
-    // eslint-disable-next-line no-lone-blocks
     {this.state.languages.map(language => (arr.push(language.language)))};
+    arr.filter(function(val) { return val == null; }).join(", ")
     var langsUnique = ([...new Set(arr)]);
 
     return(langsUnique)
   }
+  
   renderLanguages(){
     const arr = [];
     // eslint-disable-next-line no-lone-blocks
@@ -75,8 +79,7 @@ class App extends Component {
   }
 
 
-  // chart data
-  // two data points, followers and number of people they're following 
+  // chart data two data points, followers and number of people they're following 
   getChartData(){
     const followerVal = this.state.followers
     const followingVal = this.state.following
@@ -108,11 +111,21 @@ class App extends Component {
     })
   }
 
-  // render user info and visualised data  buttons and charts
+  listOfRepos() {
+    return (
+      <ul>
+        {this.state.repos.map(repo => (
+          <li  key={repo.id}>
+               <a href={repo.html_url}>{repo.name}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   renderInfo() {
     return (
       <div className='renders'>
-        <a href="s">HOME</a>
         <p> <UserIcon src={this.state.avatar} alt="this.name" /></p>
         <name> {this.state.name} </name>
         <p> {'Location: ' + this.state.location} </p>
@@ -132,6 +145,13 @@ class App extends Component {
           </div>
         </Popup>
         </div>
+        <repolist>
+        <div>
+          List of Repositories
+          {this.state.repos ? this.listOfRepos() : null}
+        </div>
+        </repolist>
+        <a href="/">HOME</a>
   </div>
     );
   }
@@ -146,7 +166,7 @@ class App extends Component {
          <header className="App-header">
             <h1 className="App-title">GitHub API Project</h1>
           </header>
-        <UserForm retrieveInfo={this.retrieveInfo} />
+        <UserInput retrieveInfo={this.retrieveInfo} />
         {this.state.name ?
           this.renderInfo()
           :
@@ -161,8 +181,8 @@ export default App;
 
 
 const UserIcon = styled('img')`
-    position: -200px 0px;
+    position: 0px 0px;
     width: 400px;
     height: 400px;
-    border-radius: 100%;
+    border-radius: 50%;
     `

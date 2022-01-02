@@ -1,7 +1,7 @@
 import React from 'react';
 
 // button style and details
-const UserForm = (props) => {
+const UserInput = (props) => {
     return(
     <form onSubmit={props.retrieveInfo}>
         <input 
@@ -16,5 +16,5 @@ const UserForm = (props) => {
     );
 }
 
-export default UserForm;
+export default UserInput;
 

@@ -9,7 +9,7 @@ const UserInput = (props) => {
         placeholder='Github Username'
         type="text" 
         name="username"
-        //autoComplete='off'
+        autoComplete='off'
         />
         <button id="Search"> Search </button>
     </form>

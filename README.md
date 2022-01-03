@@ -11,4 +11,4 @@ then
 
 You should get a popup to localhost and there the project will display. You can then enter a valid github username to display data with the buttons at the bottom of the page
 
-<img src="./githubapigif.gif" alt="My Project GIF" width="500" height="600">
+![Video Demo](https://github.com/mikeysweeney/githubapi/blob/branch/githubapi/githubapigif.gif)

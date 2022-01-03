@@ -1,6 +1,6 @@
 import React from 'react';
 
-// button style and details
+// user input with textbox and buttons
 const UserInput = (props) => {
     return(
     <form onSubmit={props.retrieveInfo}>

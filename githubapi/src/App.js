@@ -24,9 +24,8 @@ class App extends Component {
     chartData3:[],
     repos: []
   }
-  // variable users which are the urls
-  // retrieve the data from the github api 
-  // extract relevant information from api - user info
+  
+  //retrievs data from the github api using axios and stores in constants
   retrieveInfo = async (e) => {
     e.preventDefault();
 
@@ -56,6 +55,7 @@ class App extends Component {
       this.getChartData2();
   }
 
+  //creates a list of the languages used
   listOfLanguages(){
     const arr = [];
     {this.state.languages.map(language => (arr.push(language.language)))};
@@ -65,21 +65,20 @@ class App extends Component {
     return(langsUnique)
   }
   
+  //compiles the amount that specific languages are used
   renderLanguages(){
     const arr = [];
-    // eslint-disable-next-line no-lone-blocks
     {this.state.languages.map(language => (arr.push(language.language)))};
     var langsUnique = ([...new Set(arr)]);
     var arrayLength = langsUnique.length;
     const size=[];
-    // eslint-disable-next-line no-lone-blocks
     {this.state.languages.map(language => (size.push(language.size)))};
     const subA = size.slice(0,arrayLength);
     return(subA)
   }
 
 
-  // chart data two data points, followers and number of people they're following 
+  // chart followers and number of people they're following 
   getChartData(){
     const followerVal = this.state.followers
     const followingVal = this.state.following
@@ -96,6 +95,7 @@ class App extends Component {
     })
   }
 
+  // chart language data
   getChartData2(){
     const labelLangs = this.listOfLanguages()
     const dataLangs = this.renderLanguages()
@@ -111,6 +111,7 @@ class App extends Component {
     })
   }
 
+  //list the repos and their links
   listOfRepos() {
     return (
       <ul>
@@ -123,6 +124,7 @@ class App extends Component {
     )
   }
 
+  //render layout
   renderInfo() {
     return (
       <div className='renders'>
@@ -156,9 +158,7 @@ class App extends Component {
     );
   }
 
-  // render page layout and search bar  
-  // header, footer, searchbar
-  
+  // render page layout   
   render() {
 
     return (
@@ -179,7 +179,7 @@ class App extends Component {
 }
 export default App;
 
-
+//size and location of avatar
 const UserIcon = styled('img')`
     position: 0px 0px;
     width: 400px;

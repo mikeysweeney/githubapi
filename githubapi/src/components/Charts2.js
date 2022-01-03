@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
 
-//chart style and details
+//chart style for languages
 export default class Chart2 extends Component{
     constructor(props){
         super(props);
